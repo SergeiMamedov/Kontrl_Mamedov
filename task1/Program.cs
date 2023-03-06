@@ -19,3 +19,33 @@ string[] FillArray(int size)
 
     return arr;
 }
+int CountWordsWithLessThan3Symbols(string[] arr)
+{
+    int count = 0;
+    foreach (string str in arr)
+    {
+        if (str.Length <= 3)
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+string[] CopyOnlyLessThan3Symbols(string[] initialArr)
+{
+    int copySize = CountWordsWithLessThan3Symbols(initialArr);
+    string[] newArr = new string[copySize];
+
+    int count = 0;
+    foreach (string str in initialArr)
+    {
+        if (str.Length <= 3)
+        {
+            newArr[count++] = str;
+        }
+    }
+
+    return newArr;
+}
