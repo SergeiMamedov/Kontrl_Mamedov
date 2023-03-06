@@ -6,7 +6,7 @@
 string Prompt(string message)
 {
     Console.WriteLine(message);
-    return Console.ReadLine();
+    return Console.ReadLine() ?? " ";
 }
 
 string[] FillArray(int size)
@@ -49,3 +49,15 @@ string[] CopyOnlyLessThan3Symbols(string[] initialArr)
 
     return newArr;
 }
+void ShowArr(string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write($"{arr[i]} ");
+    }
+}
+
+int size = Int32.Parse(Prompt("Size of array: "));
+string[] arr = FillArray(size);
+string[] duplicate = CopyOnlyLessThan3Symbols(arr);
+ShowArr(duplicate);
